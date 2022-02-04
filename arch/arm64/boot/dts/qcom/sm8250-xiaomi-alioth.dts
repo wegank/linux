@@ -575,10 +575,6 @@
 	};
 };
 
-&uart12 {
-	status = "okay";
-};
-
 &ufs_mem_hc {
 	status = "okay";
 
