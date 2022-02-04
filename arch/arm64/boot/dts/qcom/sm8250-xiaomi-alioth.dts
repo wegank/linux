@@ -416,7 +416,7 @@
 	status = "okay";
 
 	/* ir-spi @ 0 */
-}
+};
 
 &i2c3 {
 	status = "okay";
@@ -469,13 +469,13 @@
 		pinctrl-1 = <&ts_int_suspend &ts_reset_suspend>;
 		pinctrl-2 = <&pmx_ts_release>;
 	};
-}
+};
 
 &i2c11 {
 	status = "okay";
 
 	/* awinic,aw8697_haptic @ 5a */
-}
+};
 
 &i2c15 {
 	status = "okay";
@@ -483,7 +483,7 @@
 	/* qcom,smb1390 @ 10 */
 	/* halo,hl6111r @ 25 */
 	/* ti,bq2597x-standalone @ 66 */
-}
+};
 
 &i2c16 {
 	status = "okay";
@@ -493,7 +493,7 @@
 	/* nuvolta,wl_charger_rx1619 @ 61 */
 	/* nuvolta,wl_rx1619_trim @ 67 */
 	/* qcom,pm8008 @ 8 */
-}
+};
 
 &qupv3_id_0 {
 	status = "okay";
