@@ -9,6 +9,8 @@
 #include "pm8150l.dtsi"
 #include "pm8009.dtsi"
 
+/delete-node/ &xbl_aop_mem;
+/delete-node/ &slpi_mem;
 /delete-node/ &adsp_mem;
 /delete-node/ &spss_mem;
 /delete-node/ &cdsp_secure_heap;
@@ -64,33 +66,28 @@
 	};
 
 	reserved-memory {
-		adsp_mem: memory@8a100000 {
-			reg = <0x0 0x8a100000 0x0 0x2500000>;
+		xbl_aop_mem: memory@80600000 {
+			reg = <0x0 0x80600000 0x0 0x260000>;
+			no-map;
+		};
+		
+		slpi_mem: memory@88c00000 {
+			reg = <0x0 0x88c00000 0x0 0x2f00000>;
 			no-map;
 		};
 
-		spss_mem: memory@8c600000 {
-			reg = <0x0 0x8c600000 0x0 0x100000>;
+		adsp_mem: memory@8bb00000 {
+			reg = <0x0 0x8bb00000 0x0 0x2500000>;
 			no-map;
 		};
 
-		cdsp_secure_heap: memory@8c700000 {
-			reg = <0x0 0x8c700000 0x0 0x4600000>;
+		spss_mem: memory@8e000000 {
+			reg = <0x0 0x8e000000 0x0 0x100000>;
 			no-map;
 		};
 
-		cont_splash_mem: memory@9c000000 {
-			reg = <0x0 0x9c000000 0x0 0x2300000>;
-			no-map;
-		};
-
-		ramoops@ffc00000 {
-			compatible = "ramoops";
-			reg = <0x0 0xffc00000 0x0 0x100000>;
-			record-size = <0x1000>;
-			console-size = <0x40000>;
-			msg-size = <0x20000 0x20000>;
-			ecc-size = <16>;
+		cdsp_secure_heap: memory@8e100000 {
+			reg = <0x0 0x8e100000 0x0 0x4600000>;
 			no-map;
 		};
 	};
