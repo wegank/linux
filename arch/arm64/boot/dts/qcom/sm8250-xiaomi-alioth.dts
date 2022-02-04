@@ -507,46 +507,12 @@
 	status = "okay";
 };
 
-&sdhc_2 {
-	status = "okay";
-
-	cd-gpios = <&tlmm 77 GPIO_ACTIVE_HIGH>;
-	pinctrl-names = "default", "sleep";
-	pinctrl-0 = <&sdc2_default_state &sdc2_card_det_n>;
-	pinctrl-1 = <&sdc2_sleep_state &sdc2_card_det_n>;
-	vmmc-supply = <&vreg_l9c_2p9>;
-	vqmmc-supply = <&vreg_l6c_2p9>;
-	bus-width = <4>;
-	no-sdio;
-	no-emmc;
-};
-
 &slpi {
 	status = "okay";
 };
 
 &tlmm {
 	gpio-reserved-ranges = <40 4>, <52 4>;
-
-	sdc2_default_state: sdc2-default {
-		clk {
-			pins = "sdc2_clk";
-			drive-strength = <16>;
-			bias-disable;
-		};
-
-		cmd {
-			pins = "sdc2_cmd";
-			drive-strength = <16>;
-			bias-pull-up;
-		};
-
-		data {
-			pins = "sdc2_data";
-			drive-strength = <16>;
-			bias-pull-up;
-		};
-	};
 
 	mdm2ap_default: mdm2ap-default {
 		pins = "gpio1", "gpio3";
@@ -589,15 +555,6 @@
 		drive-strength = <16>;
 		bias-disable;
 	};
-
-	sdc2_card_det_n: sd-card-det-n {
-		pins = "gpio77";
-		function = "gpio";
-		bias-pull-up;
-		drive-strength = <2>;
-	};
-
-	
 };
 
 &uart12 {
